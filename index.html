@@ -42,31 +42,28 @@
                 <div id="sidebar">
                     <div class="widget">
                         <h2>Cart</h2>
-                        <div v-if="cartitems.length > 0" class="mini-cart">
+                        <div v-if="cartitems.length > 0" class="mini-cart">                            
                             <div class="cart-list">
-
-                            <div v-for="cartitem in cartitems" class="cart-item">
-                                <div class="mincart-img">
-                                    <img v-bind:src="'./img/'+cartitem.image" alt="prod001">
-                                </div>
-                                <div class="mincart-info ">
-                                    <div class="mincart-product-name" >
-                                        <h3>{{cartitem.name}}</h3>
-                                        <p>{{cartitem.price}} {{cartitem.totalPrice}}</p> 
+                                <div v-for="cartitem in cartitems" class="cart-item">
+                                    <div class="mincart-img">
+                                        <img v-bind:src="'./img/'+cartitem.image" alt="prod001">
                                     </div>
-                                    <div class="mincart-price d-flex justify-content-end align-items-center"> 
-                                            <div class="mincart-quantity"> 
-                                                    
-                                                    <input type="number" value="0" class="quant" min="0" v-model.number="cartitem.quantity" @change="updateTotal(cartitem)"> 
-                                                </div>
+                                    <div class="mincart-info ">
+                                        <div class="mincart-product-name" >
+                                            <h3>{{cartitem.name}}</h3>
+                                            <p>{{cartitem.price}} {{cartitem.totalPrice}}</p> 
+                                        </div>
+                                        <div class="mincart-price d-flex justify-content-end align-items-center"> 
+                                                <div class="mincart-quantity"> 
+                                                        
+                                                        <input type="number" value="0" class="quant" min="0" v-model.number="cartitem.quantity" @change="updateTotal(cartitem)"> 
+                                                    </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            </div>
-                            
                             <div class="cart-summary">
-                                    <div> <h4>Subtotal</h4> <span> {{subTotal}} </span></div>
+                                <div> <h4>Subtotal</h4> <span> {{subTotal}} </span></div>
                                 <div> <h4>Tax ({{taxPercent}}%)</h4> <span> {{taxTotal}}</span></div>
                                 <div> <h4>Coupon Code</h4> <input @change="applyCoupon" v-model="coupon" type="text" placeholder="Enter Coupon code"></div>
                                 <div> <h4 class="total-amount">Total</h4> 
@@ -75,12 +72,9 @@
                                 </div>
                             </div>
                             <div class="cart-actions">
-                                    <button v-on:click="clearCart" class="back-shopping"> Clear Cart </button>
-                                    <button class="checkout"> Checkout </button>
+                                <button v-on:click="clearCart" class="back-shopping"> Clear Cart </button>
+                                <button class="checkout"> Checkout </button>
                             </div>
-                            
-
-
                         </div>
                     </div>
                 </div>
@@ -88,7 +82,7 @@
         </main>
         <footer id="footer">
             <div class="container"><div class="row"><div class="col-md-12"> 
-                <p> Vueshop - A vue powered ecommerce  page</p>
+                <p> Vueshop - A vue powered ecommerce  page</p> | Check it out on <a href="https://github.com/web2feel/vueshop">Github</a>
             </div></div></div>
         </footer>
     </div>    
