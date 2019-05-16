@@ -51,15 +51,15 @@ body {
   padding: .5em 0;
   color: #fff;
   width: 120px;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .products .product-block .product-img-block img {
   width: 100%;
   height: auto;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .products .product-block .product-img-block:hover button {

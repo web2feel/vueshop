@@ -87,8 +87,7 @@ var products = new Vue({
         updateTotal :function(cartitem){
             if(cartitem.quantity === 0){
                 let index = this.cartitems.findIndex(cart => cart.name === cartitem.name)
-                this.cartitems.splice(index, 1);
-                
+                this.cartitems.splice(index, 1);                
             }
             let newtotal = 0
             for(let i = 0; i < this.cartitems.length; i++){
@@ -97,10 +96,7 @@ var products = new Vue({
             this.subTotal = newtotal
             this.taxTotal = this.subTotal * this.taxPercent / 100
             this.totalFinal = this.subTotal + this.taxTotal
-
             this.applyCoupon()
         }
-
-
     }
 })
