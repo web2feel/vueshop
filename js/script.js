@@ -81,7 +81,8 @@ var products = new Vue({
         },
         clearCart:function(){
             this.cartitems = [],
-            this.subTotal = 0
+            this.subTotal = 0,
+            this.coupon=''
         },
         updateTotal :function(cartitem){
             if(cartitem.quantity === 0){
