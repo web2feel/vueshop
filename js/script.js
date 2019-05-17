@@ -69,8 +69,7 @@ var products = new Vue({
                     })
             }
             this.subTotal += product.price
-            this.taxTotal = this.subTotal * this.taxPercent / 100
-            this.totalFinal = this.subTotal + this.taxTotal
+            this.computeTotal()
             this.applyCoupon()
         },
         applyCoupon:function(){
@@ -94,9 +93,15 @@ var products = new Vue({
                 newtotal += this.cartitems[i].price * this.cartitems[i].quantity                
             }
             this.subTotal = newtotal
-            this.taxTotal = this.subTotal * this.taxPercent / 100
-            this.totalFinal = this.subTotal + this.taxTotal
+            this.computeTotal()
             this.applyCoupon()
         }
+    },
+    computed: {
+        computeTotal:function(){
+            this.taxTotal = this.subTotal * this.taxPercent / 100
+            this.totalFinal = this.subTotal + this.taxTotal
+        }
     }
+
 })
