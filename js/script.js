@@ -96,9 +96,7 @@ var products = new Vue({
             this.subTotal = newtotal
             this.computeTotal()
             this.applyCoupon()
-        }
-    },
-    computed: {
+        },
         computeTotal:function(){
             this.taxTotal = this.subTotal * this.taxPercent / 100
             this.totalFinal = this.subTotal + this.taxTotal
