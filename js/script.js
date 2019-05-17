@@ -49,7 +49,7 @@ var products = new Vue({
         discountedTotal:0
     },
     methods:{
-          addToCart:function(product){
+        addToCart:function(product){
             let dupe = false
             for(let i = 0; i < this.cartitems.length; i++){
                 if(this.cartitems[i].id === product.id){
@@ -85,7 +85,7 @@ var products = new Vue({
         },
         updateTotal :function(cartitem){
             if(cartitem.quantity === 0){
-                let index = this.cartitems.findIndex(cart => cart.name === cartitem.name)
+                let index = this.cartitems.findIndex(cart => cart.id === cartitem.id)
                 this.cartitems.splice(index, 1);                
             }
             let newtotal = 0
@@ -103,5 +103,4 @@ var products = new Vue({
             this.totalFinal = this.subTotal + this.taxTotal
         }
     }
-
 })
